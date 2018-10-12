@@ -23,7 +23,7 @@ export class WaitPage {
     console.log('ionViewDidLoad WaitPage');
 
     const year = new Date().getFullYear();
-    const fourthOfJuly = new Date("Sun Jul 22 2018 3:40:00").getTime();
+    const fourthOfJuly = new Date("Sat Oct 20 2018 20:00:00").getTime();
 
     // countdown
     let timer = setInterval(function () {
