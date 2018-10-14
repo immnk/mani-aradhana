@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -7,24 +7,13 @@ import { NavController, IonicPage, AlertController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  password = "";
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
-
+  rootPage: string = "WaitPage";
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  testPassword() {
-    console.log("HomeComponent: ", this.password);
-    if (this.password.toLowerCase() == "mani25" || this.password.toLowerCase() == "mani24") {
-      this.navCtrl.push("WaitPage");
-    } else {
-      const alert = this.alertCtrl.create({
-        title: 'Wrong Password!',
-        subTitle: 'You have entered the wrong password. Please enter a alpha-numeric password that is 6 characters in length!',
-        buttons: ['OK']
-      });
-      alert.present();
-    }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
   }
-
 }

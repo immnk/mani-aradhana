@@ -23,6 +23,11 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
+$red: #ef2f3c;
+$white: #f6f4f3;
+$blue: #276fbf;
+$dark: #183059;
+$yellow: #f0a202;
 
 
 // Named Color Variables
@@ -34,11 +39,11 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    $blue,
+  secondary:  $yellow,
+  danger:     $red,
+  light:      $white,
+  dark:       $dark
 );
 
 
@@ -87,10 +92,3 @@ $colors: (
 
 $font: "Lato", sans-serif;
 $big: "Montserrat", sans-serif;
-
-$red: #ef2f3c;
-$white: #f6f4f3;
-$blue: #276fbf;
-$dark: #183059;
-$yellow: #f0a202;
-

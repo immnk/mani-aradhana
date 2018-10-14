@@ -1,0 +1,12 @@
+<ion-content padding>
+  <div class="container">
+    <form>
+      <input type="password" name="name" class="question" id="nme" required autocomplete="off" [(ngModel)]="password"/>
+      <label for="nme">
+        <span>What's your password?</span>
+      </label>
+      <span class="hint-text">* REMEMBER YOUR PASSWORD IS 6 CHARACTERS IN LENGTH</span>
+      <button type="button" class="button" (click)="testPassword()">Enter App</button>
+    </form>
+  </div>
+</ion-content>

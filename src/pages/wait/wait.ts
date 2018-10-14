@@ -1,13 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the WaitPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-wait',
@@ -22,11 +15,16 @@ export class WaitPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad WaitPage');
 
+    this.runCountdownTimer();
+  }
+
+  runCountdownTimer() {
+
     const year = new Date().getFullYear();
     const fourthOfJuly = new Date("Sat Oct 20 2018 20:00:00").getTime();
 
     // countdown
-    let timer = setInterval(function () {
+    let timer = setInterval(function() {
 
       // get today's date
       const today = new Date().getTime();
@@ -43,14 +41,14 @@ export class WaitPage {
       // display
       document.getElementById("timer").innerHTML =
         "<div class=\"days\"> \
-          <div class=\"numbers\">" + days + "</div>days</div> \
-        <div class=\"hours\"> \
-          <div class=\"numbers\">" + hours + "</div>hours</div> \
-        <div class=\"minutes\"> \
-          <div class=\"numbers\">" + minutes + "</div>minutes</div> \
-        <div class=\"seconds\"> \
-          <div class=\"numbers\">" + seconds + "</div>seconds</div> \
-        </div>";
+              <div class=\"numbers\">" + days + "</div>days</div> \
+            <div class=\"hours\"> \
+              <div class=\"numbers\">" + hours + "</div>hours</div> \
+            <div class=\"minutes\"> \
+              <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+            <div class=\"seconds\"> \
+              <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+            </div>";
     }, 1000);
   }
 
