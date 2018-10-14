@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 import { NavController, IonicPage, AlertController, Loading, LoadingController } from 'ionic-angular';
 import { AuthenticationServiceProvider } from '../../providers/authentication-service/authentication-service';
 
@@ -12,7 +13,8 @@ export class LoginPage {
   loading: Loading;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,
-    private loadingCtrl: LoadingController, public auth: AuthenticationServiceProvider
+    private loadingCtrl: LoadingController, public auth: AuthenticationServiceProvider,
+    private storage: Storage
   ) { }
 
   testPassword() {
@@ -23,8 +25,10 @@ export class LoginPage {
     this.loading.present();
     this.auth.validateUser(this.password)
       .subscribe((response: any) => {
+        this.password = "";
         this.loading.dismiss();
         if (response.success == true) {
+          this.storage.set("loggedInUser", response.body);
           this.auth.loggedinUserDetails = response.body.userType;
           console.log("user authenticated :: ", this.auth.loggedinUserDetails);
           this.navCtrl.setRoot("MenuPage");
@@ -40,5 +44,12 @@ export class LoginPage {
       });
   }
 
-
+  ionViewDidLoad() {
+    this.storage.get("loggedInUser").then(response => {
+      if (response) {
+        this.password = response.password;
+        this.testPassword();
+      }
+    })
+  }
 }
