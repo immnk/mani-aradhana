@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-card *ngFor="let event of events" (click)="openEvent(event)">
     <div class="card-image-container">
       <img [src]="event.eventPicture" />

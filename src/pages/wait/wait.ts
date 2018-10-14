@@ -36,8 +36,10 @@ export class WaitPage {
   }
 
   ionViewDidLeave() {
-    if (this.observableVar)
+    if (this.observableVar) {
       this.observableVar.unsubscribe();
+      this.observableVar = null;
+    }
   }
 
   runCountdownTimer() {
