@@ -6,7 +6,12 @@
   background-color: $dark;
 }
 
-h1 {
+.event-cover {
+  height: 250px;
+  object-fit: cover;
+}
+
+.wait-line {
   font-family: $font;
   text-align: center;
   margin-top: 2em;
@@ -23,96 +28,95 @@ h1 {
   font-family: $font;
   font-size: 0.7em;
   letter-spacing: 5px;
-  margin-top: 25%;
-}
+  margin-top: 24px;
 
-.days,
-.hours,
-.minutes,
-.seconds {
-  display: inline-block;
-  padding: 20px;
-  width: 125px;
-  border-radius: 5px;
-  margin: 10px;
-}
-
-.days {
-  background: $red;
-}
-
-.hours {
-  background: $white;
-  color: $dark;
-}
-
-.minutes {
-  background: $blue;
-}
-
-.seconds {
-  background: $yellow;
-}
-
-.numbers {
-  font-family: $big;
-  color: $dark;
-  font-size: 5em;
-}
-
-.white {
-  position: absolute;
-  background: $white;
-  height: 85px;
-  width: 75px;
-  left: 30%;
-  top: 2%;
-
-  .triangle {
-    border-bottom: 14px solid $white;
+  .days,
+  .hours,
+  .minutes,
+  .seconds {
+    display: inline-block;
+    padding: 20px;
+    width: 125px;
+    border-radius: 5px;
+    margin: 10px;
   }
 
-  .string {
-    background: $white;
-    border: 1px solid $white;
-  }
-}
-
-.red {
-  position: absolute;
-  background: $red;
-  left: 18%;
-  top: 9%;
-  height: 65px;
-  width: 70px;
-
-  .triangle {
-    border-bottom: 14px solid $red;
-  }
-
-  .string {
+  .days {
     background: $red;
-    border: 1px solid $red;
-  }
-}
-
-.blue {
-  position: absolute;
-  background: $blue;
-  height: 80px;
-  width: 80px;
-  left: 60%;
-  top: 5%;
-
-  .triangle {
-    border-bottom: 14px solid $blue;
   }
 
-  .string {
+  .hours {
+    background: $white;
+    color: $dark;
+  }
+
+  .minutes {
     background: $blue;
-    border: 1px solid $blue;
+  }
+
+  .seconds {
+    background: $yellow;
+  }
+
+  .numbers {
+    font-family: $big;
+    color: $dark;
+    font-size: 4em;
   }
 }
+// .white {
+//   position: absolute;
+//   background: $white;
+//   height: 85px;
+//   width: 75px;
+//   left: 30%;
+//   top: 2%;
+//
+//   .triangle {
+//     border-bottom: 14px solid $white;
+//   }
+//
+//   .string {
+//     background: $white;
+//     border: 1px solid $white;
+//   }
+// }
+//
+// .red {
+//   position: absolute;
+//   background: $red;
+//   left: 18%;
+//   top: 9%;
+//   height: 65px;
+//   width: 70px;
+//
+//   .triangle {
+//     border-bottom: 14px solid $red;
+//   }
+//
+//   .string {
+//     background: $red;
+//     border: 1px solid $red;
+//   }
+// }
+//
+// .blue {
+//   position: absolute;
+//   background: $blue;
+//   height: 80px;
+//   width: 80px;
+//   left: 60%;
+//   top: 5%;
+//
+//   .triangle {
+//     border-bottom: 14px solid $blue;
+//   }
+//
+//   .string {
+//     background: $blue;
+//     border: 1px solid $blue;
+//   }
+// }
 
 footer {
   position: absolute;

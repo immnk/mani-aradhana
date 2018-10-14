@@ -8,6 +8,7 @@
 </ion-header>
 <ion-content>
   <div ion-fixed class="wrapper">
+    <img class="event-cover" [src]="event.eventPicture"/>
     <div id="timer">
       <div class="days">
         <div class="numbers">{{days}}</div>days
@@ -22,7 +23,7 @@
         <div class="numbers">{{seconds}}</div>seconds
       </div>
     </div>
-    <h1>Time to wait for you :-)</h1>
+    <h1 class="wait-line">Time to wait for you :-)</h1>
     <footer>
       <p>For my <a href="https://www.facebook.com/aradhana.gate" target="_blank">aaru</a> ♡</p>
     </footer>
