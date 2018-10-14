@@ -8,6 +8,7 @@ export interface AppConfig {
   appName: string;
   endPoint: string;
   validate: string;
+  getAllEvents: string;
 }
 
 /**
@@ -16,7 +17,8 @@ export interface AppConfig {
 export const APP_DI_CONFIG: AppConfig = {
   appName: 'Aradhana',
   endPoint: "https://us-central1-aradhana-api.cloudfunctions.net/app",
-  validate: "/validate?passkey="
+  validate: "/validate?passkey=",
+  getAllEvents: "/events?permission="
 }
 
 /**

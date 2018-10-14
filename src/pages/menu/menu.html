@@ -1,0 +1,27 @@
+<ion-menu type="overlay" [content]="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="close"></ion-icon>
+      </button>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage('HomePage')">
+        <ion-icon name="home" item-start></ion-icon>
+        Home
+      </button>
+      <button ion-item (click)="openPage(friendsPage)">
+        <ion-icon name="log-out" item-start></ion-icon>
+        Logout
+      </button>
+      <!-- <button ion-item (click)="openPage(eventsPage)">
+        Events
+      </button> -->
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

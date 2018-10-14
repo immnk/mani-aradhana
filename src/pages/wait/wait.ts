@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Observable } from 'Rxjs/rx';
+import { Subscription } from "rxjs/Subscription";
 
 @IonicPage()
 @Component({
@@ -8,48 +10,47 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class WaitPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  observableVar: Subscription;
+  event;
+  days; hours; minutes; seconds;
+  constructor(
+    public navCtrl: NavController, public navParams: NavParams
+  ) {
+    this.event = {
+      eventName: "Loading"
+    }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WaitPage');
 
-    this.runCountdownTimer();
+    let event = this.navParams.data.data;
+    console.log(event);
+    if (event) {
+      this.event = event;
+      this.observableVar = Observable.interval(1000).subscribe(() => {
+        this.runCountdownTimer();
+      });
+    } else
+      this.navCtrl.setRoot("MenuPage");
+  }
+
+  ionViewDidLeave() {
+    if (this.observableVar)
+      this.observableVar.unsubscribe();
   }
 
   runCountdownTimer() {
-
-    const year = new Date().getFullYear();
-    const fourthOfJuly = new Date("Sat Oct 20 2018 20:00:00").getTime();
-
-    // countdown
-    let timer = setInterval(function() {
-
-      // get today's date
-      const today = new Date().getTime();
-
-      // get the difference
-      const diff = fourthOfJuly - today;
-
-      // math
-      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      // display
-      document.getElementById("timer").innerHTML =
-        "<div class=\"days\"> \
-              <div class=\"numbers\">" + days + "</div>days</div> \
-            <div class=\"hours\"> \
-              <div class=\"numbers\">" + hours + "</div>hours</div> \
-            <div class=\"minutes\"> \
-              <div class=\"numbers\">" + minutes + "</div>minutes</div> \
-            <div class=\"seconds\"> \
-              <div class=\"numbers\">" + seconds + "</div>seconds</div> \
-            </div>";
-    }, 1000);
+    const fourthOfJuly = this.event.eventDate;
+    // get today's date
+    const today = new Date().getTime();
+    // get the difference
+    const diff = fourthOfJuly - today;
+    // math
+    this.days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    this.hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    this.minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    this.seconds = Math.floor((diff % (1000 * 60)) / 1000);
   }
 
 }

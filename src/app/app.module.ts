@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { AppConfig, APP_DI_CONFIG, APP_CONFIG_TOKEN } from '../providers/config-service/config-service';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
+import { EventProvider } from '../providers/event/event';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthenticationServiceProvider } from '../providers/authentication-servi
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     { provide: APP_CONFIG_TOKEN, useValue: APP_DI_CONFIG },
-    AuthenticationServiceProvider
+    AuthenticationServiceProvider,
+    EventProvider
   ]
 })
 export class AppModule {}

@@ -3,17 +3,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Wait</ion-title>
+    <ion-title>{{event.eventName}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <div ion-fixed>
-      <div class="wrapper">
-          <div id="timer"></div>
-          <h1>Time to wait for you :-)</h1>
-        </div>
-        <footer>
-          <p>For my <a href="https://www.facebook.com/aradhana.gate" target="_blank">aaru</a> ♡
-        </footer>
+  <div ion-fixed class="wrapper">
+    <div id="timer">
+      <div class="days">
+        <div class="numbers">{{days}}</div>days
+      </div>
+      <div class="hours">
+        <div class="numbers">{{hours}}</div>hours
+      </div>
+      <div class="minutes">
+        <div class="numbers">{{minutes}}</div>minutes
+      </div>
+      <div class="seconds">
+        <div class="numbers">{{seconds}}</div>seconds
+      </div>
+    </div>
+    <h1>Time to wait for you :-)</h1>
+    <footer>
+      <p>For my <a href="https://www.facebook.com/aradhana.gate" target="_blank">aaru</a> ♡</p>
+    </footer>
   </div>
 </ion-content>

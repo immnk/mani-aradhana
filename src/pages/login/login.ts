@@ -25,9 +25,9 @@ export class LoginPage {
       .subscribe((response: any) => {
         this.loading.dismiss();
         if (response.success == true) {
-          this.auth.loggedinUserDetails = response.body;
-          console.log("user authenticated :: " + this.auth.loggedinUserDetails);
-          this.navCtrl.push("HomePage");
+          this.auth.loggedinUserDetails = response.body.userType;
+          console.log("user authenticated :: ", this.auth.loggedinUserDetails);
+          this.navCtrl.setRoot("MenuPage");
         } else {
           let errorMessage = response.errorMessage || 'You have entered the wrong password. Please enter a alpha-numeric password that is 6 characters in length!';
           const alert = this.alertCtrl.create({
