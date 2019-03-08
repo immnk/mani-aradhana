@@ -1,7 +1,0 @@
-{
-  "name": "aradhana",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
