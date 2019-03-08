@@ -1,6 +1,8 @@
 # Aradhana App
 
-A mobile app made for my communication with my girlfriend
+[![Build Status](https://travis-ci.com/immnk/mani-aradhana.svg?branch=master)](https://travis-ci.com/immnk/mani-aradhana) [![Dependencies](https://david-dm.org/immnk/mani-aradhana.svg)](https://david-dm.org/) [![Open Issues](https://img.shields.io/github/issues-raw/immnk/mani-aradhana.svg)](https://github.com/immnk/mani-aradhana/issues) [![Tests](https://img.shields.io/badge/tests-covered-inactive.svg)](https://github.com/immnk/mani-aradhana/issues/2)
+
+> A mobile app made for my communication with my girlfriend
 
 ## Table of contents
 
